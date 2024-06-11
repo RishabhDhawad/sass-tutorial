@@ -1,0 +1,42 @@
+@import "mixin";
+@import "var";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// 1: Operators
+// 2: Variables
+// 3: Nesting
+// 4: Mixing
+// 5: Parameter
+// 6: Partials
+
+.main_header {
+  @include flexprob;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color; // Variable
+
+  // Nesting
+
+  h1 {
+    @include commoncode(0.8rem, uppercase); // Mixing
+    &:hover {
+      color: #c8d6e5;
+    }
+  }
+
+  p {
+    @include commoncode(0.3rem, capitalize); // Mixing
+    &:hover {
+      color: #c8d6e5;
+    }
+  }
+}
